@@ -7,6 +7,7 @@ import Midsection from "./Pages/Midsection";
 import Bottomsection from "./Pages/Bottomsection";
 import Bento from "./Pages/bento";
 import Bento2 from "./Pages/Bento2";
+import Footer from "./Pages/footer";
 // import { useEffect, useState } from "react";
 
 // import StarRating from "./Pages/StarRating";
@@ -36,6 +37,7 @@ function App() {
       <Midsection />
       <Bottomsection />
       <Bento2 />
+      <Footer />
 
       {/* <StarRating /> */}
     </div>

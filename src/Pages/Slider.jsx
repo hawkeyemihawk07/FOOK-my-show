@@ -37,7 +37,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css/pagination";
 
 function Slider() {
   return (
@@ -47,14 +48,16 @@ function Slider() {
           // padding: "40px 0px",
           "--swiper-navigation-color": "#fff", // change to your color
           "--swiper-navigation-size": "28px", // optional: change size
-          // "--swiper-pagination-color": "white", // active dot color
-          // "--swiper-pagination-bullet-inactive-color": "#ffffff", // inactive dot color
-          // "--swiper-pagination-bullet-inactive-opacity": "0.4", // optional
+          "--swiper-pagination-color": "white", // active dot color
+          "--swiper-pagination-bullet-inactive-color": "black", // inactive dot color
+          "--swiper-pagination-bullet-inactive-opacity": "0.4", // optional
         }}
         spaceBetween={2}
         slidesPerView={1.5}
         navigation={true}
-        modules={[Navigation]}
+        autoplay={true}
+        pagination={{ clickable: true }}
+        modules={[Navigation, Autoplay, Pagination]}
       >
         {[1, 2, 3, 4].map((item) => (
           <SwiperSlide>
