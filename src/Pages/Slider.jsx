@@ -109,11 +109,7 @@ function Slider() {
         {[1, 2, 3, 4, 5].map((item) => (
           <SwiperSlide key={item} className="w-[72%]!">
             <div className="h-72 rounded-xl overflow-hidden">
-              <img
-                src={`https://picsum.photos/1200/400?random=${item}`}
-                alt=""
-                className="w-full h-full object-cover"
-              />
+              <img alt="" className="w-full h-full object-cover" />
             </div>
           </SwiperSlide>
         ))}

@@ -5,11 +5,11 @@ import Slider from "./Pages/Slider";
 import Herosection2 from "./Pages/Herosection2";
 import Midsection from "./Pages/Midsection";
 import Bottomsection from "./Pages/Bottomsection";
-import Bento from "./Pages/bento";
+// import Bento from "./Pages/bento";
 import Bento2 from "./Pages/Bento2";
 import Footer from "./Pages/footer";
 
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // import StarRating from "./Pages/StarRating";
 // import Herosection from "./Pages/Herosection";
@@ -28,6 +28,21 @@ function App() {
   //     }
   //     fetchMovies();
   // }, []);
+
+  const [searchMovies, setSearchMovies] = useState([]);
+  const query = "intersteller";
+  // const [isOpen, setIsOpen] = useState(true);
+  const KEY = "b2b7658a";
+  useEffect(function () {
+    async function fetchMovies() {
+      const res = await fetch(`http:www.omdbapi.com/?apikey=${KEY}&s=${query}`);
+      const data = await res.json();
+      setSearchMovies(data.Search || []);
+      console.log(data);
+    }
+    fetchMovies();
+  }, []);
+  console.log(searchMovies);
 
   return (
     <div className="bg-white min-h-screen w-full">

@@ -12,7 +12,7 @@ function Navbar() {
       <div className="flex flex-row items-center justify-center">
         <h1 className="px-3.5">Mumbai</h1>
         <button className="h-8 w-36 bg-white rounded-md">Sign-in</button>
-        <hamburger className="px-3.5">=</hamburger>
+        <div className="px-3.5">=</div>
       </div>
     </div>
   );
