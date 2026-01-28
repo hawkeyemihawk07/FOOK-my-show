@@ -9,7 +9,7 @@ import Bottomsection from "./Pages/Bottomsection";
 import Bento2 from "./Pages/Bento2";
 import Footer from "./Pages/footer";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 // import StarRating from "./Pages/StarRating";
 // import Herosection from "./Pages/Herosection";
@@ -29,23 +29,28 @@ function App() {
   //     fetchMovies();
   // }, []);
 
-  const [searchMovies, setSearchMovies] = useState([]);
-  const query = "intersteller";
+  // const [searchMovies, setSearchMovies] = useState([]);
+  // const query = "interstellar";
   // const [isOpen, setIsOpen] = useState(true);
-  const KEY = "b2b7658a";
-  useEffect(function () {
-    async function fetchMovies() {
-      const res = await fetch(`http:www.omdbapi.com/?apikey=${KEY}&s=${query}`);
-      const data = await res.json();
-      setSearchMovies(data.Search || []);
-      console.log(data);
-    }
-    fetchMovies();
-  }, []);
-  console.log(searchMovies);
+  // const KEY = "b2b7658a";
+  // useEffect(
+  //   function () {
+  //     async function fetchMovies() {
+  //       const res = await fetch(
+  //         `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+  //       );
+  //       const data = await res.json();
+  //       setSearchMovies(data.Search || []);
+  //       console.log(data);
+  //     }
+  //     fetchMovies();
+  //   },
+  //   [KEY, query],
+  // );
+  // console.log(searchMovies);
 
   return (
-    <div className="bg-white min-h-screen w-full">
+    <div className="bg-white min-h-screen w-full select-none">
       <Navbar />
       <Featurebar />
       <Slider slides={2} />
