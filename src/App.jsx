@@ -57,7 +57,7 @@ function App() {
       <Herosection2 />
       <Midsection />
       <Bottomsection />
-      <Bento2 />
+      {/* <Bento2 /> */}
       <Footer />
 
       {/* <StarRating /> */}

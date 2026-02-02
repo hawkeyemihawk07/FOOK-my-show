@@ -50,7 +50,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-function Slider2({ height = "h-96", movieInfo }) {
+function Slider2({ movieInfo }) {
   const renderArray = movieInfo ? movieInfo : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
@@ -69,9 +69,12 @@ function Slider2({ height = "h-96", movieInfo }) {
       >
         {renderArray.map((movie) => (
           <SwiperSlide key={movie.title}>
-            <div className={` rounded-md h-fit  font-bold ${height}`}>
-              <img className="h-96" src={movie.Imglink} alt="" />
-              <h1 className="py-2">{movie.title}</h1>
+            <div className={` rounded-md h-fit  font-bold `}>
+              <img className="h-fit   " src={movie.Imglink} alt="" />
+              <h1 className="py-1">{movie.title}</h1>
+              {movie.location && (
+                <h1 className="font-light">{movie.location}</h1>
+              )}
               <h1 className="font-light text-black">{movie.genre}</h1>
             </div>
           </SwiperSlide>

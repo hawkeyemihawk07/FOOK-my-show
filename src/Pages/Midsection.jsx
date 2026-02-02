@@ -4,53 +4,53 @@ function Midsection() {
   const Premier = [
     {
       title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
+
       Imglink: "src/Premier photos/The Hunger Games.avif",
     },
     {
-      title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
-      Imglink: "src/Premier photos/The Hunger Games.avif",
+      title: "Christmas Karma",
+
+      Imglink: "src/Premier photos/hristmas Karma.avif",
     },
     {
-      title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
-      Imglink: "src/Premier photos/The Hunger Games.avif",
+      title: "Den Of Thevies",
+
+      Imglink: "src/Premier photos/Dan of thevies.avif",
     },
     {
-      title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
-      Imglink: "src/Premier photos/The Hunger Games.avif",
+      title: "Slient Night Deadly Night",
+
+      Imglink: "src/Premier photos/Slient Night.avif",
     },
     {
-      title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
-      Imglink: "src/Premier photos/The Hunger Games.avif",
+      title: "SAW 3",
+
+      Imglink: "src/Premier photos/SAW3.avif",
     },
     {
-      title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
-      Imglink: "src/Premier photos/The Hunger Games.avif",
+      title: "SAW 5",
+
+      Imglink: "src/Premier photos/SAW5.avif",
     },
     {
-      title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
-      Imglink: "src/Premier photos/The Hunger Games.avif",
+      title: "Civil War",
+
+      Imglink: "src/Premier photos/Civil war.avif",
     },
     {
-      title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
-      Imglink: "src/Premier photos/The Hunger Games.avif",
+      title: "Blackmail",
+
+      Imglink: "src/Premier photos/Blackmail.avif",
     },
     {
-      title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
-      Imglink: "src/Premier photos/The Hunger Games.avif",
+      title: "The Blair Witch",
+
+      Imglink: "src/Premier photos/The Blair witch.avif",
     },
     {
-      title: "The Hunger Games: The Ballad of Songbirds and Snakes",
-      genre: "Comedy/Drama/Sports",
-      Imglink: "src/Premier photos/The Hunger Games.avif",
+      title: "The Internship",
+
+      Imglink: "src/Premier photos/The Internship.avif",
     },
   ];
   return (

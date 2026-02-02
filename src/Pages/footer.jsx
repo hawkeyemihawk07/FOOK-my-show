@@ -15,7 +15,10 @@ function footer() {
           "The Raja Saab",
           "Lollapalooza India 2026",
         ].map((item) => (
-          <div className="h-fit w-fit p-4 border-2  flex flex-col" key={item}>
+          <div
+            className="h-fit w-fit p-4 bg-[#d6d6d6]  flex flex-col"
+            key={item}
+          >
             <h1 className="text-lg font-bold text-red-500">{item}</h1>
             <h2>Movies</h2>
           </div>
