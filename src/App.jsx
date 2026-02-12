@@ -8,6 +8,11 @@ import Bottomsection from "./Pages/Bottomsection";
 // import Bento from "./Pages/bento";
 import Bento2 from "./Pages/Bento2";
 import Footer from "./Pages/footer";
+import Footer2 from "./Pages/Footer2";
+import Footer3 from "./Pages/Footer3";
+import Footer4 from "./Pages/Footer4";
+import Footer5 from "./Pages/Footer5";
+import Footer6 from "./Pages/Footer6";
 
 // import { useEffect, useState } from "react";
 
@@ -59,6 +64,10 @@ function App() {
       <Bottomsection />
       {/* <Bento2 /> */}
       <Footer />
+      <Footer2 />
+      <Footer3 />
+      <Footer5 />
+      <Footer6 />
 
       {/* <StarRating /> */}
     </div>

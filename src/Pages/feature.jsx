@@ -1,6 +1,6 @@
 function featurebar() {
   return (
-    <div className="bg-gray-200 flex justify-evenly ">
+    <div className="bg-gray-200 flex justify-evenly cursor-pointer">
       <div className="flex px-3.5">
         <a className="px-3.5">Movies</a>
         <a className="px-3.5">Stream</a>
