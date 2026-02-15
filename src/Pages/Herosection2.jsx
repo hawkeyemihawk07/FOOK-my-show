@@ -103,7 +103,12 @@ function Herosection2() {
       <div className="flex  flex-col items-center justify-center h-auto w-[82%]">
         <div className="flex mt-6   items-center h-auto w-[80%]  justify-between">
           <h3 className="font-bold text-2xl">Recommended Movies</h3>
-          <div className="text-red-500">See All&#x2978;</div>
+          <div
+            className="text-red-500 cursor-pointer
+          "
+          >
+            See All&#x2978;
+          </div>
         </div>
         <Slider2 movieInfo={movieInfo} height={large} />
 

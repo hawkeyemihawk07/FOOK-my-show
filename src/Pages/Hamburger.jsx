@@ -1,7 +1,10 @@
-function Hamburger() {
+function Hamburger({ setHamburger }) {
   return (
     <div className="h-screen w-full   absolute flex z-50">
-      <div className="h-screen w-[82%] bg-black/60"></div>
+      <div
+        className="h-screen w-[82%] bg-black/60 "
+        onClick={() => setHamburger(false)}
+      ></div>
       <div className="h-full bg-white py-1 w-[18%] items-start  flex flex-col gap-7">
         <div className="font-bold text-xl px-3 text-zinc-900">Hey!</div>
 

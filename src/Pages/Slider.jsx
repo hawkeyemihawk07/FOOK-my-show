@@ -87,6 +87,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 function Slider() {
+  const photos = [
+    "src/Head slider/5off.avif",
+    "src/Head slider/Kailash kher.avif",
+    "src/Head slider/mahabharat.avif",
+    "src/Head slider/Wicked.avif",
+  ];
   return (
     <div className="w-full py-6">
       <Swiper
@@ -106,12 +112,12 @@ function Slider() {
           "--swiper-pagination-color": "#fff",
         }}
       >
-        {[1, 2, 3, 4, 5].map((item) => (
+        {photos.map((item) => (
           <SwiperSlide key={item} className="w-[72%]!">
             <div className="h-72 rounded-xl overflow-hidden">
               <img
-                src={`https://picsum.photos/1200/400?random=${item}`}
-                alt=""
+                src={item}
+                alt="photo"
                 className="w-full h-full object-cover"
               />
             </div>

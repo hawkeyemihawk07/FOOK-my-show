@@ -9,7 +9,7 @@ function Footer2() {
           get listed on BookMyShow
         </div>
         <div className="flex w-fit pl-32">
-          <button className="flex p-3 bg-[#dc354b] rounded-lg font-bold">
+          <button className="flex p-3 cursor-pointer bg-[#dc354b] rounded-lg font-bold">
             Contact today!
           </button>
         </div>
