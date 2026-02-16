@@ -1,6 +1,6 @@
 function Hamburger({ setHamburger }) {
   return (
-    <div className="h-screen w-full   absolute flex z-50">
+    <div className="h-screen w-full  absolute flex z-50">
       <div
         className="h-screen w-[82%] bg-black/60 "
         onClick={() => setHamburger(false)}
@@ -17,8 +17,15 @@ function Hamburger({ setHamburger }) {
             <div className="flex text-xs px-2 ">Login/Register</div>
           </button>
         </div>
+
+        <div className=" w-full  px-6 flex justify-between  items-center ">
+          <div className="flex items-center gap-4">
+            <img src="src/assets/Notification.svg" alt="" />
+            <p>Notification</p>
+          </div>
+          <p className="flex">&gt;</p>
+        </div>
       </div>
-      <div></div>
     </div>
   );
 }

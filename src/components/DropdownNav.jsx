@@ -17,7 +17,7 @@ function DropdownNav({ setDown }) {
       className="h-screen w-full flex justify-center pt-20 bg-black/60 absolute z-50"
     >
       <div
-        onClick={() => setDown(true)}
+        onClick={(e) => e.stopPropagation()}
         className="bg-white flex flex-col h-80   w-[50%] rounded-lg"
       >
         <div className="w-full p-3.5 flex">
