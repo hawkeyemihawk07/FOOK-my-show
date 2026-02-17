@@ -55,7 +55,7 @@ function App() {
   // console.log(searchMovies);
 
   return (
-    <div className="bg-white min-h-screen w-full select-none">
+    <div className="bg-white  min-h-screen w-full select-none">
       <Navbar />
       <Featurebar />
       <Slider slides={2} />

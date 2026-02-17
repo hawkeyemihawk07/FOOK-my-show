@@ -9,6 +9,7 @@ function Footer4({ renderArray, title }) {
         <div className=" w-full items-start  flex ">
           {renderArray.map((movie) => (
             <a
+              // key={}
               className={`hover:text-white text-xs  ${renderArray.length === renderArray.indexOf(movie) + 1 ? "" : "border-r"} border-zinc-500 px-2`}
               href=""
             >
