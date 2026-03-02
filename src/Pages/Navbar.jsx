@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Hamburger from "./Hamburger";
 import DropdownNav from "../components/DropdownNav";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [hambuger, setHamburger] = useState(false);
@@ -31,9 +32,11 @@ function Navbar() {
           src="src/assets/Downarrow.svg"
           alt="DropdownNav"
         />
-        <button className="h-8 w-24 bg-red-400  cursor-pointer rounded-md">
-          Sign-in
-        </button>
+        <Link to={"/Login"}>
+          <button className="h-8 w-24 bg-red-400  cursor-pointer rounded-md">
+            Sign-in
+          </button>
+        </Link>
 
         <img
           className="h-7 px-4 cursor-pointer   "

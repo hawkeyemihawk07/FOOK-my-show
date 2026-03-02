@@ -5,7 +5,7 @@ import "swiper/css";
 import Slider2 from "./Slider2";
 // import Slider from "./Slider";
 
-function Herosection2() {
+function Herosection2({ setMovie }) {
   const large = "h-96";
   // const medium = "h-44";
   const movieInfo = [
@@ -110,7 +110,7 @@ function Herosection2() {
             See All&#x2978;
           </div>
         </div>
-        <Slider2 movieInfo={movieInfo} height={large} />
+        <Slider2 setMovie={setMovie} movieInfo={movieInfo} height={large} />
 
         <div className="flex mt-8 h-fit w-full justify-center items-center">
           <div className="flex  h-28 rounded-3xl w-[80%]">

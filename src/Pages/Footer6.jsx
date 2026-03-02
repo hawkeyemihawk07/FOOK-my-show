@@ -19,7 +19,7 @@ function Footer6() {
       <div className="bg-[#333333] w-full flex items-center justify-center gap-4">
         {logos.map((logo) => (
           <img
-            className="h-9 bg-white rounded-xl  cursor-pointer hover:text-zinc-400"
+            className="h-9 bg-white rounded-2xl text-shadow-amber-50 cursor-pointer hover:text-zinc-400"
             src={`/src/assets/${logo}.svg`}
             key={logo}
             alt="logo"
