@@ -2,10 +2,12 @@ import { useState } from "react";
 import Hamburger from "./Hamburger";
 import DropdownNav from "../components/DropdownNav";
 import { Link } from "react-router-dom";
+import LoginPage from "../components/LoginPage";
 
 function Navbar() {
   const [hambuger, setHamburger] = useState(false);
   const [down, setDown] = useState(false);
+  const [up, setUp] = useState(false);
   return (
     <div className="w-full flex  justify-center h-16  relative">
       <img
@@ -25,18 +27,22 @@ function Navbar() {
         />
       </div>
       <div className="flex flex-row items-center justify-center">
-        <h1 className="px-3.5">Mumbai</h1>
+        <h1 className="px-3.5" onClick={() => setDown(true)}>
+          Mumbai
+        </h1>
         <img
           className="h-5 px-1.5"
           onClick={() => setDown(true)}
           src="src/assets/Downarrow.svg"
           alt="DropdownNav"
         />
-        <Link to={"/Login"}>
-          <button className="h-8 w-24 bg-red-400  cursor-pointer rounded-md">
-            Sign-in
-          </button>
-        </Link>
+
+        <button
+          className="h-8 w-24 bg-red-400 text-white cursor-pointer rounded-md"
+          onClick={() => setUp(true)}
+        >
+          Sign-in
+        </button>
 
         <img
           className="h-7 px-4 cursor-pointer   "
@@ -47,6 +53,7 @@ function Navbar() {
       </div>
       {hambuger && <Hamburger setHamburger={setHamburger} />}
       {down && <DropdownNav setDown={setDown} />}
+      {up && <LoginPage setup={setUp} />}
     </div>
   );
 }

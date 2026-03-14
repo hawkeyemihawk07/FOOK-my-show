@@ -19,7 +19,7 @@ function Homepage({ setMovie }) {
     <div className="bg-white  min-h-screen w-full select-none">
       <Navbar />
       <Featurebar />
-      <Slider slides={2} />
+      <Slider />
       <Herosection2 setMovie={setMovie} />
       <Midsection />
       <Bottomsection />

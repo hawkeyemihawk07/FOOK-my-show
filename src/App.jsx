@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./Homepage";
-import Login from "./components/Login";
+import Details from "/src/components/Details";
 import { useEffect, useState } from "react";
+// import Details from "./components/Details";
 
 // import { useEffect, useState } from "react";
 
@@ -63,8 +64,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage setMovie={setMovie} />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/Details" element={<Login />} />
+
+        <Route path="/details" element={<Details />} />
       </Routes>
     </BrowserRouter>
   );

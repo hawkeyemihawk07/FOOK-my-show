@@ -30,7 +30,7 @@ function Herosection2({ setMovie }) {
       Imglink: "src/Recommended/Aga Aga Sunbai! Kay Mhantay Sasubai.avif",
     },
     {
-      title: "Dhurandar",
+      title: "Dhurandhar",
       genre: "Action/Thriller",
       Imglink: "src/Recommended/Dhurandar.avif",
     },
