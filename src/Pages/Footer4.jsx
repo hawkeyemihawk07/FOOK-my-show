@@ -1,20 +1,19 @@
 function Footer4({ renderArray, title }) {
-  //   const title = [];
   return (
-    <div className="h-fit w-full flex items-center justify-center bg-[#333333]">
-      <div className="h-full  w-[65%] text-sm text-zinc-500 flex flex-col items-center justify-center ">
-        <div className="flex text-sm justify-between w-full  px-2 py-6 ">
+    <div className="flex w-full items-center justify-center bg-[#333333] px-4">
+      <div className="flex w-full max-w-7xl flex-col justify-center py-5 text-zinc-500">
+        <div className="w-full py-2 text-sm font-semibold uppercase tracking-[0.16em] text-zinc-300">
           {title}
         </div>
-        <div className=" w-full items-start  flex ">
-          {renderArray.map((movie) => (
-            <a
-              // key={}
-              className={`hover:text-white text-xs  ${renderArray.length === renderArray.indexOf(movie) + 1 ? "" : "border-r"} border-zinc-500 px-2`}
-              href=""
+        <div className="flex w-full flex-wrap gap-x-2 gap-y-2 text-xs sm:text-sm">
+          {renderArray.map((movie, index) => (
+            <span
+              key={`${title}-${movie}`}
+              className="text-zinc-500 hover:text-white"
             >
               {movie}
-            </a>
+              {index !== renderArray.length - 1 ? " |" : ""}
+            </span>
           ))}
         </div>
       </div>

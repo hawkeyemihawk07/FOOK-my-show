@@ -1,3 +1,5 @@
+import { resolveAsset } from "../utils/resolveAsset";
+
 function Footer3() {
   const info = [
     { src: "support_agent.svg", label: "24/7 CUSTOMER CARE" },
@@ -11,16 +13,16 @@ function Footer3() {
     },
   ];
   return (
-    <div className="bg-[#404040] flex gap-40 text-zinc-300  text-sm items-center justify-center h-28 w-full">
+    <div className="grid w-full grid-cols-1 gap-6 bg-[#404040] px-4 py-6 text-sm text-zinc-300 sm:grid-cols-3">
       {info.map((feature) => (
         <div
-          className="h-fit hover:text-white w-fit flex flex-col justify-center items-center"
+          className="flex h-fit w-full flex-col items-center justify-center gap-3 px-2 text-center hover:text-white"
           key={feature.label}
         >
           <img
             className="h-14 hover:text-white"
-            src={`src/assets/${feature.src} `}
-            alt=""
+            src={resolveAsset(`src/assets/${feature.src}`)}
+            alt={feature.label}
           />
           <p>{feature.label}</p>
         </div>

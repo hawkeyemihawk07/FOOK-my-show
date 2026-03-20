@@ -47,14 +47,29 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
+import { resolveAsset } from "../utils/resolveAsset";
 
-function Slider2({ movieInfo, setMovie }) {
-  const renderArray = movieInfo ? movieInfo : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function Slider2({ movieInfo = [], interactive = false, height = "" }) {
+  const navigate = useNavigate();
+  const renderArray = Array.isArray(movieInfo) ? movieInfo.filter(Boolean) : [];
+
+  const handleCardClick = (movieTitle) => {
+    if (!interactive || !movieTitle) {
+      return;
+    }
+
+    navigate(`/details?title=${encodeURIComponent(movieTitle)}`);
+  };
+
+  if (!renderArray.length) {
+    return null;
+  }
 
   return (
-    <div className="h-auto w-full pb-7  px-40">
+    <div className="h-auto w-full pb-7">
       <Swiper
         style={{
           padding: "10px 0px",
@@ -62,28 +77,81 @@ function Slider2({ movieInfo, setMovie }) {
           "--swiper-navigation-size": "28px",
           "--swiper-navigation-background": "#0000",
         }}
-        spaceBetween={25}
+        grabCursor={true}
+        watchOverflow={true}
+        spaceBetween={18}
         slidesPerView={5}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.15,
+            spaceBetween: 14,
+          },
+          640: {
+            slidesPerView: 2.15,
+            spaceBetween: 18,
+          },
+          768: {
+            slidesPerView: 3.15,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4.15,
+            spaceBetween: 22,
+          },
+          1280: {
+            slidesPerView: 5,
+            spaceBetween: 25,
+          },
+        }}
         navigation
         modules={[Navigation]}
       >
-        {renderArray.map((movie) => (
-          <SwiperSlide key={movie.title}>
-            <div className={` rounded-md h-fit  font-bold `}>
-              <img
-                className="h-fit"
-                onClick={() => setMovie(movie.title)}
-                src={movie.Imglink}
-                alt=""
-              />
-              <h1 className="py-1">{movie.title}</h1>
-              {movie.location && (
-                <h1 className="font-light">{movie.location}</h1>
-              )}
-              <h1 className="font-light text-black">{movie.genre}</h1>
-            </div>
-          </SwiperSlide>
-        ))}
+        {renderArray.map((movie, index) => {
+          const key = movie.title ?? movie.Imglink ?? `slide-${index}`;
+          const hasMeta = Boolean(movie.title || movie.location || movie.genre);
+          const frameClass =
+            height || (hasMeta ? "aspect-[2/3]" : "aspect-[16/9]");
+
+          return (
+            <SwiperSlide key={key}>
+              <article className="h-full  rounded-2xl font-bold">
+                <div
+                  className={`overflow-hidden rounded-2xl bg-zinc-100 ${frameClass}`}
+                >
+                  <img
+                    className={`h-full w-full object-cover transition-transform duration-300 ${
+                      interactive && movie.title
+                        ? "cursor-pointer hover:scale-[1.02]"
+                        : ""
+                    }`}
+                    onClick={() => handleCardClick(movie.title)}
+                    src={resolveAsset(movie.Imglink)}
+                    alt={movie.title ?? "event"}
+                  />
+                </div>
+                {hasMeta && (
+                  <div className="space-y-1 pt-3">
+                    {movie.title && (
+                      <h1 className="min-h-10 text-sm font-semibold text-zinc-900 sm:text-base">
+                        {movie.title}
+                      </h1>
+                    )}
+                    {movie.location && (
+                      <h2 className="text-xs font-light text-zinc-700 sm:text-sm">
+                        {movie.location}
+                      </h2>
+                    )}
+                    {movie.genre && (
+                      <h2 className="text-xs font-light text-zinc-700 sm:text-sm">
+                        {movie.genre}
+                      </h2>
+                    )}
+                  </div>
+                )}
+              </article>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );

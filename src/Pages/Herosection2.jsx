@@ -5,8 +5,8 @@ import "swiper/css";
 import Slider2 from "./Slider2";
 // import Slider from "./Slider";
 
-function Herosection2({ setMovie }) {
-  const large = "h-96";
+function Herosection2() {
+  const large = "h-72 sm:h-80 lg:h-96";
   // const medium = "h-44";
   const movieInfo = [
     {
@@ -99,44 +99,38 @@ function Herosection2({ setMovie }) {
   ];
 
   return (
-    <div className=" h-fit w-full flex flex-col justify-center items-center">
-      <div className="flex  flex-col items-center justify-center h-auto w-[82%]">
-        <div className="flex mt-6   items-center h-auto w-[80%]  justify-between">
-          <h3 className="font-bold text-2xl">Recommended Movies</h3>
-          <div
-            className="text-red-500 cursor-pointer
-          "
-          >
+    <section className="w-full py-4">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <h3 className="text-xl font-bold sm:text-2xl">Recommended Movies</h3>
+          <div className="cursor-pointer text-sm font-medium text-red-500 sm:text-base">
             See All&#x2978;
           </div>
         </div>
-        <Slider2 setMovie={setMovie} movieInfo={movieInfo} height={large} />
+        <Slider2 movieInfo={movieInfo} interactive height={large} />
 
-        <div className="flex mt-8 h-fit w-full justify-center items-center">
-          <div className="flex  h-28 rounded-3xl w-[80%]">
-            <img
-              src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/stream-leadin-web-collection-202210241242.png"
-              alt=""
-            />
-          </div>
+        <div className="overflow-hidden rounded-3xl">
+          <img
+            className="h-20 w-full object-cover sm:h-24 md:h-28"
+            src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/stream-leadin-web-collection-202210241242.png"
+            alt=""
+          />
         </div>
-        <div className="flex mt-6  items-center h-auto w-[80%]  justify-between">
-          <h3 className="font-bold  text-2xl">The Best Of Live Events </h3>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <h3 className="text-xl font-bold sm:text-2xl">The Best Of Live Events</h3>
         </div>
 
         <Slider2 movieInfo={liveEvents} />
 
-        <div className="flex mt-8 h-fit w-full justify-center pb-11 items-center">
-          <div className="flex  h-36 rounded-3xl w-[80%]">
-            <img
-              className="rounded-sm"
-              src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/best-of-bms-banner-2025-web-collection-202512100543.jpg"
-              alt=""
-            />
-          </div>
+        <div className="overflow-hidden rounded-3xl pb-2">
+          <img
+            className="h-24 w-full rounded-3xl object-cover sm:h-28 md:h-36"
+            src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/best-of-bms-banner-2025-web-collection-202512100543.jpg"
+            alt=""
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 export default Herosection2;

@@ -14,13 +14,13 @@ import Footer3 from "./Pages/Footer3";
 import Footer5 from "./Pages/Footer5";
 import Footer6 from "./Pages/Footer6";
 
-function Homepage({ setMovie }) {
+function Homepage() {
   return (
     <div className="bg-white  min-h-screen w-full select-none">
       <Navbar />
       <Featurebar />
       <Slider />
-      <Herosection2 setMovie={setMovie} />
+      <Herosection2 />
       <Midsection />
       <Bottomsection />
       {/* <Bento2 /> */}

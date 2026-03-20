@@ -54,25 +54,27 @@ function Midsection() {
     },
   ];
   return (
-    <div className="bg-[#2b3148] flex justify-center items-center  h-fit pt-11 w-full">
-      <div className="w-[80%] flex flex-col  h-fit">
+    <section className="w-full bg-[#2b3148] py-10 sm:py-12">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:px-8">
         <img
-          className="px-36"
+          className="w-full rounded-3xl object-cover"
           src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-banner-web-collection-202208191200.png"
           alt=""
         />
 
         <div className="flex flex-col gap-2">
-          <div className="text-white text-2xl px-40  font-semibold">
-            <h2>Premiers</h2>
-            <h3>Brand new releases every Friday</h3>
+          <div className="font-semibold text-white">
+            <h2 className="text-xl sm:text-2xl">Premiers</h2>
+            <h3 className="pt-1 text-sm text-zinc-300 sm:text-base">
+              Brand new releases every Friday
+            </h3>
           </div>
-          <div className="flex text-white gap-10">
+          <div className="flex text-white">
             <Slider2 movieInfo={Premier} />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 export default Midsection;

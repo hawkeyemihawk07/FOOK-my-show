@@ -1,4 +1,8 @@
-function Hamburger({ setHamburger }) {
+import { resolveAsset } from "../utils/resolveAsset";
+import { useAuth } from "../context/useAuth";
+
+function Hamburger({ setHamburger, openLogin }) {
+  const { currentUser, logout } = useAuth();
   const hamInfo = [
     {
       src: "src/assets/Notification.svg",
@@ -27,34 +31,56 @@ function Hamburger({ setHamburger }) {
   ];
 
   return (
-    <div className="h-screen w-full  absolute flex z-50">
+    <div className="absolute z-50 flex h-screen w-full">
       <div
-        className="h-screen w-[82%] bg-black/60 "
+        className="h-screen flex-1 bg-black/60"
         onClick={() => setHamburger(false)}
       ></div>
-      <div className="h-full bg-white py-1 w-[18%] items-start  flex flex-col gap-7">
+      <div className="flex h-full w-[88%] flex-col gap-7 bg-white py-1 sm:w-[70%] md:w-[42%] lg:w-[28%]">
         <div className="font-bold text-xl px-3 text-zinc-900 py-1 ">Hey!</div>
 
-        <div className=" flex gap-2 py-2 items-center justify-center bg-[#ffff] shadow-sm px-4 shadow-zinc-800">
+        <div className="flex gap-2 bg-[#ffff] px-4 py-2 shadow-sm shadow-zinc-800">
           <img
             className="h-10"
-            src="src/assets/rewards_login.avif"
+            src={resolveAsset("src/assets/rewards_login.avif")}
             alt="image"
           />
-          <div className="text-[#747eaa] text-md">
-            Unlock special offers & great benefits
+          <div className="flex flex-1 flex-col text-[#747eaa] text-md">
+            <p className="text-sm font-medium text-zinc-900">
+              {currentUser ? currentUser.email : "Unlock special offers & great benefits"}
+            </p>
+            <p className="text-xs text-zinc-500">
+              {currentUser ? "Signed in on this browser" : "Login with email to manage bookings"}
+            </p>
           </div>
-          <button className="border text-red-600 border-red-600 rounded-lg flex items-center justify-center mt-1 h-8 w-32">
-            <div className="flex text-xs px-2 ">Login/Register</div>
-          </button>
+          {currentUser ? (
+            <button
+              type="button"
+              onClick={() => {
+                logout();
+                setHamburger(false);
+              }}
+              className="mt-1 h-8 rounded-lg border border-zinc-300 px-3 text-xs text-zinc-700"
+            >
+              Logout
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={openLogin}
+              className="mt-1 h-8 rounded-lg border border-red-600 px-3 text-xs text-red-600"
+            >
+              Login/Register
+            </button>
+          )}
         </div>
         {hamInfo.map((ham) => (
           <div
             key={ham.title}
-            className=" w-full  px-6 flex justify-between  items-center "
+            className="flex w-full items-center justify-between px-6"
           >
             <div className="flex items-center gap-4">
-              <img src={ham.src} alt="" />
+              <img src={resolveAsset(ham.src)} alt={ham.title} />
               <div className="flex flex-col ">
                 <p>{ham.title}</p>
                 <p>{ham.info}</p>

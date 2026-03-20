@@ -1,30 +1,32 @@
 function footer() {
   return (
-    <div className="h-auto w-full flex flex-col p-8 justify-center items-center">
-      <h2 className="flex  font-bold text-xl pb-6">
-        Trending Searches Right Now
-      </h2>
-      <div className="flex flex-wrap w-[50%] gap-7">
-        {[
-          "Krantijyoti Vidyalay Marathi Madhyam",
-          "Dhurandhar",
-          "Border 2",
-          "The Housemaid",
-          "Avatar: Fire and Ash",
-          "Ikkis",
-          "The Raja Saab",
-          "Lollapalooza India 2026",
-        ].map((item) => (
-          <div
-            className="h-fit w-fit p-4 bg-[#d6d6d6]  flex flex-col"
-            key={item}
-          >
-            <h1 className="text-lg font-bold text-red-500">{item}</h1>
-            <h2>Movies</h2>
-          </div>
-        ))}
+    <section className="w-full px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col items-center">
+        <h2 className="pb-6 text-center text-xl font-bold sm:text-2xl">
+          Trending Searches Right Now
+        </h2>
+        <div className="grid w-full gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {[
+            "Krantijyoti Vidyalay Marathi Madhyam",
+            "Dhurandhar",
+            "Border 2",
+            "The Housemaid",
+            "Avatar: Fire and Ash",
+            "Ikkis",
+            "The Raja Saab",
+            "Lollapalooza India 2026",
+          ].map((item) => (
+            <div
+              className="flex h-full min-h-28 flex-col rounded-2xl bg-[#d6d6d6] p-4"
+              key={item}
+            >
+              <h1 className="text-base font-bold text-red-500 sm:text-lg">{item}</h1>
+              <h2 className="pt-2 text-sm text-zinc-700">Movies</h2>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

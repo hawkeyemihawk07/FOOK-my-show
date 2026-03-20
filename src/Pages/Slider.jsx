@@ -85,6 +85,7 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { resolveAsset } from "../utils/resolveAsset";
 
 function Slider() {
   const photos = [
@@ -94,11 +95,11 @@ function Slider() {
     "src/Head slider/Wicked.avif",
   ];
   return (
-    <div className="w-full py-6">
+    <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <Swiper
         centeredSlides={true}
         slidesPerView="auto"
-        spaceBetween={10}
+        spaceBetween={16}
         loop={true}
         navigation={true}
         autoplay={{
@@ -113,12 +114,12 @@ function Slider() {
         }}
       >
         {photos.map((item) => (
-          <SwiperSlide key={item} className="w-[72%]!">
-            <div className="h-72 rounded-xl overflow-hidden">
+          <SwiperSlide key={item} className="!w-[94%] sm:!w-[88%] lg:!w-[72%]">
+            <div className="aspect-[21/9] overflow-hidden rounded-2xl sm:rounded-3xl lg:h-72 lg:aspect-auto">
               <img
-                src={item}
+                src={resolveAsset(item)}
                 alt="photo"
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
           </SwiperSlide>

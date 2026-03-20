@@ -1,5 +1,5 @@
 import Slider2 from "./Slider2";
-import SliderCrousel from "./sliderCrousel";
+import SliderCrousel from "./SliderCrousel";
 
 function Bottomsection() {
   // const large = "h-88";
